@@ -1,0 +1,282 @@
+/* -------------------- RESET AND FONT -------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+p,
+a,
+em,
+img,
+strong,
+center,
+ul,
+li,
+form,
+label,
+footer,
+header,
+menu,
+nav,
+output {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+select {
+  height: 35px;
+  border-radius: 15px;
+  padding-left: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+select:focus-visible {
+  outline: initial;
+}
+
+/* -------------------- MAIN -------------------- */
+
+.App {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../assets/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  padding: 30px;
+  background: #ede4d1;
+  border-radius: 75px;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  animation: opacityAnim forwards 2.5s;
+}
+
+@keyframes opacityAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mainAnim {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);  }
+}
+
+.main {
+  position: relative;
+  width: 420px;
+  min-height: 580px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 30px;
+  background: #276246;
+  color: #ffff;
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  animation: mainAnim forwards 1.5s;
+}
+
+.main-assetSpray {
+  width: 150px;
+  position: absolute;
+  top: -100px;
+  right: -160px;
+  transform: rotate(225deg);
+}
+
+.logo {
+  display: flex;
+  width: 125px;
+  margin: 0 auto;
+}
+
+/* -------------------- REQUEST AND SELECT LINE / STATION -------------------- */
+
+.request {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.request-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.request-select-header {
+  margin-bottom: 15px;
+}
+
+.request-select-header img {
+  width: 40px;
+}
+
+/* -------------------- SCHEDULE -------------------- */
+
+.schedule {
+  margin-top: 30px;
+}
+.schedule ul li {
+  padding-bottom: 6.5px;
+  line-height: 25px;
+}
+.schedule-time {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* -------------------- ERROR AND LOADING DISPLAY AND ANIMATION -------------------- */
+
+@keyframes displayError {
+  from {
+    opacity: 0;
+    bottom: -50px;
+  }
+
+  50% {
+    opacity: 1;
+    bottom: 50px;
+  }
+
+  to {
+    opacity: 0;
+    bottom: -50px;
+  }
+}
+
+.error {
+  width: 220px;
+  height: 60px;
+
+  position: fixed;
+  right: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+
+  animation: displayError forwards 5s;
+  padding: 18px;
+  border-radius: 25px;
+  background: #dc2626;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.loading {
+  margin: 0 auto;
+  padding: 30px;
+  background: #ede4d1;
+}
+/* -------------------- SUBWAY ICON AT LEFT BOTTOM OF THE PAGE -------------------- */
+
+img.subway-icon {
+  position: absolute;
+  bottom: 0px;
+  width: 100px;
+  left: 130px;
+  animation: opacityAnim forwards 2.5s;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media screen and (max-width: 975px) {
+  .header {
+    width: 80%;
+    top: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+}
+
+@media screen and (max-height: 975px) {
+  .main {
+    margin-top: 150px;
+  }
+}
+
+@media screen and (max-width: 875px) {
+  .main-assetSpray {
+    width: 80px;
+    top: -50px;
+    right: -90px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .main-assetSpray {
+    display: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  body {
+    font-size: 18px;
+  }
+  .main {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .subway-icon {
+    display: none;
+  }
+}

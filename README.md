@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Paris - Métro | next-subway ⏱️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+next-subway est une application qui permet de suivre l'arrivée et le départ des différents métros de Paris selon la ligne et la station, tout ça en temps réel via l'api https://api-ratp.pierre-grimaud.fr/v4/.
 
-## Available Scripts
+### `Demo Live (hosting sur Firebase)`
 
-In the project directory, you can run:
+https://next-subway-e9658.web.app/
 
-### `npm start`
+## `BILAN`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Améliorations possibles :**
+- Fonctionnalité d'ajout de ligne(s) et stations(s) favorite(s) via le localStorage. 
+- Fonctionnalité d'ajout d'un horaire favori via le localStorage. 
+- Notification via le système de Chrome par exemple d'alerte d'arrivée de son horaires favoris dans moins de 15minutes.
+- Extension aux autres villes de France
+- Multi-langue pour généré du trafic via le tourisme
+- Partenariat avec les offices touristiques
+- Publicité ciblé en Europe pour que les touristes prenne l'habitude en venant à Paris d'utiliser cette application et pas une autre.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Réussites :**
+- Gestion de getter optimisé selon la requête (fetch des données requises uniquement).
+- Gestion du state et des requêtes centraliser et affichage des érreurs.
 
-### `npm test`
+**Difficultés :**
+- Hook personnalisé pour une si petite application sans grand intérêt hormis épurer de quelques lignes le code.
+- Je voulais utiliser ```styled-component``` mais j'ai préféré centraliser le fonctionnement de l'app que de m'étendre, j'ai donc utilisé un fichier CSS lambda.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Scripts
+
+### `npm install`
+
+Installez l'application ainsi que ces dépendances.
+
+### ```npm start```
+
+```cd next-subway``` puis lancé l'application avec ```npm start```.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Si vous souhaitez déployer l'application, utiliser cette commande.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Glisser ensuite le fichier "statics" à l'intérieur du dossier "www" dans votre FTP.
