@@ -19,7 +19,7 @@ https://next-subway-e9658.web.app/
 
 **Réussites :**
 - Gestion de getter optimisé selon la requête (fetch des données requises uniquement).
-- Gestion du state et des requêtes centraliser et affichage des érreurs.
+- Gestion du state et des requêtes centraliser et affichage des erreurs.
 
 **Difficultés :**
 - Hook personnalisé pour une si petite application sans grand intérêt hormis épurer de quelques lignes le code.
